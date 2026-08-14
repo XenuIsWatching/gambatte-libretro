@@ -49273,8 +49273,8 @@ struct retro_core_options_v2 options_or = {
 #define OPTION_VAL_TWB64_084_SUPER_SAIYAN_PL NULL
 #define OPTION_VAL_TWB64_085_PERFECTED_ULTRA_INSTINCT_PL NULL
 #define OPTION_VAL_TWB64_086_SAINT_SNOW_RED_PL NULL
-#define OPTION_VAL_TWB64_087_YELLOW_BANANA_PL NULL
-#define OPTION_VAL_TWB64_088_GREEN_BANANA_PL NULL
+#define OPTION_VAL_TWB64_087_YELLOW_BANANA_PL "TWB64 087 – Żółty banan"
+#define OPTION_VAL_TWB64_088_GREEN_BANANA_PL "TWB64 088 - Zielony banan"
 #define OPTION_VAL_TWB64_089_SUPER_SAIYAN_3_PL NULL
 #define OPTION_VAL_TWB64_090_SUPER_SAIYAN_BLUE_EVOLVED_PL NULL
 #define OPTION_VAL_TWB64_091_POCKET_TALES_VER_PL NULL
@@ -49346,15 +49346,15 @@ struct retro_core_options_v2 options_or = {
 #define OPTION_VAL_TWB64_155_YOSHI_EGG_GREEN_PL NULL
 #define OPTION_VAL_TWB64_156_POKEDEX_RED_PL NULL
 #define OPTION_VAL_TWB64_157_FAMILYMART_VISION_PL NULL
-#define OPTION_VAL_TWB64_158_XBOX_GREEN_PL NULL
+#define OPTION_VAL_TWB64_158_XBOX_GREEN_PL "TWB64 158 - Xboksowy zielony"
 #define OPTION_VAL_TWB64_159_SONIC_MEGA_BLUE_PL NULL
 #define OPTION_VAL_TWB64_160_SPRITE_GREEN_PL NULL
 #define OPTION_VAL_TWB64_161_SCARLETT_GREEN_PL NULL
 #define OPTION_VAL_TWB64_162_GLITCHY_BLUE_PL NULL
-#define OPTION_VAL_TWB64_163_CLASSIC_LCD_PL NULL
+#define OPTION_VAL_TWB64_163_CLASSIC_LCD_PL "TWB64 163 - Klasyczny LCD"
 #define OPTION_VAL_TWB64_164_3DS_VIRTUAL_CONSOLE_VER_PL NULL
 #define OPTION_VAL_TWB64_165_POCKETSTATION_VER_PL NULL
-#define OPTION_VAL_TWB64_166_TIMELESS_GOLD_AND_RED_PL NULL
+#define OPTION_VAL_TWB64_166_TIMELESS_GOLD_AND_RED_PL "TWB64 166 - Ponadczasowe Złoto i Czerwień"
 #define OPTION_VAL_TWB64_167_SMURFY_BLUE_PL NULL
 #define OPTION_VAL_TWB64_168_SWAMPY_OGRE_GREEN_PL NULL
 #define OPTION_VAL_TWB64_169_SAILOR_SPINACH_GREEN_PL NULL
@@ -49391,12 +49391,12 @@ struct retro_core_options_v2 options_or = {
 #define OPTION_VAL_TWB64_200_TOKYO_SKYTREE_CLOUDY_BLUE_PL NULL
 #define GAMBATTE_GB_PALETTE_TWB64_3_LABEL_PL NULL
 #define GAMBATTE_GB_PALETTE_TWB64_3_INFO_0_PL "Wybiera wewnętrzną paletę kolorów, gdy 'Wewnętrzna paleta' jest ustawiona na 'TWB64 - Pack 3'."
-#define OPTION_VAL_TWB64_201_DMG_GOLD_PL NULL
+#define OPTION_VAL_TWB64_201_DMG_GOLD_PL "TWB64 201 - DMG-Złoty"
 #define OPTION_VAL_TWB64_202_LCD_CLOCK_GREEN_PL NULL
 #define OPTION_VAL_TWB64_203_FAMICOM_FRENZY_PL NULL
 #define OPTION_VAL_TWB64_204_DK_ARCADE_BLUE_PL NULL
-#define OPTION_VAL_TWB64_205_ADVANCED_INDIGO_PL NULL
-#define OPTION_VAL_TWB64_206_ULTRA_BLACK_PL NULL
+#define OPTION_VAL_TWB64_205_ADVANCED_INDIGO_PL "TWB64 205 - Zaawansowane Indygo"
+#define OPTION_VAL_TWB64_206_ULTRA_BLACK_PL "TWB64 206 - Ultra czarny"
 #define OPTION_VAL_TWB64_207_CHAOS_EMERALD_GREEN_PL NULL
 #define OPTION_VAL_TWB64_208_BLUE_BOMBER_VISION_PL NULL
 #define OPTION_VAL_TWB64_209_KRISPY_KREME_VISION_PL NULL
@@ -49436,7 +49436,7 @@ struct retro_core_options_v2 options_or = {
 #define OPTION_VAL_TWB64_243_FUNIMATION_MELON_PL NULL
 #define OPTION_VAL_TWB64_244_TEYVAT_BROWN_PL NULL
 #define OPTION_VAL_TWB64_245_CHOZO_BLUE_PL NULL
-#define OPTION_VAL_TWB64_246_SPOTIFY_GREEN_PL NULL
+#define OPTION_VAL_TWB64_246_SPOTIFY_GREEN_PL "TWB64 246 - Spotify zielony"
 #define OPTION_VAL_TWB64_247_DR_PEPPER_RED_PL NULL
 #define OPTION_VAL_TWB64_248_NHK_SILVER_GRAY_PL NULL
 #define OPTION_VAL_TWB64_249_DUNKIN_VISION_PL NULL
@@ -49491,47 +49491,47 @@ struct retro_core_options_v2 options_or = {
 #define OPTION_VAL_TWB64_298_BAJA_BLAST_BEACH_PL NULL
 #define OPTION_VAL_TWB64_299_3DS_VIRTUAL_CONSOLE_GREEN_PL NULL
 #define OPTION_VAL_TWB64_300_WONDER_PURPLE_PL NULL
-#define GAMBATTE_GB_PALETTE_PIXELSHIFT_1_LABEL_PL NULL
+#define GAMBATTE_GB_PALETTE_PIXELSHIFT_1_LABEL_PL "> PixelShift - Paleta Paczki 1"
 #define GAMBATTE_GB_PALETTE_PIXELSHIFT_1_INFO_0_PL "Wybiera wewnętrzną paletę kolorów, gdy 'Wewnętrzna paleta' jest ustawiona na 'PixelShift - Pack 1'."
-#define OPTION_VAL_PIXELSHIFT_01_ARCTIC_GREEN_PL NULL
+#define OPTION_VAL_PIXELSHIFT_01_ARCTIC_GREEN_PL "PixelShift 01 - Zieleń Arktyki"
 #define OPTION_VAL_PIXELSHIFT_02_ARDUBOY_PL NULL
-#define OPTION_VAL_PIXELSHIFT_03_BGB_0_3_EMULATOR_PL NULL
-#define OPTION_VAL_PIXELSHIFT_04_CAMOUFLAGE_PL NULL
-#define OPTION_VAL_PIXELSHIFT_05_CHOCOLATE_BAR_PL NULL
+#define OPTION_VAL_PIXELSHIFT_03_BGB_0_3_EMULATOR_PL "PixelShift 03 - Emulator BGB 0.3"
+#define OPTION_VAL_PIXELSHIFT_04_CAMOUFLAGE_PL "PixelShift 04 - Moro"
+#define OPTION_VAL_PIXELSHIFT_05_CHOCOLATE_BAR_PL "PixelShift 05 - Batonik"
 #define OPTION_VAL_PIXELSHIFT_06_CMYK_PL NULL
-#define OPTION_VAL_PIXELSHIFT_07_COTTON_CANDY_PL NULL
-#define OPTION_VAL_PIXELSHIFT_08_EASY_GREENS_PL NULL
+#define OPTION_VAL_PIXELSHIFT_07_COTTON_CANDY_PL "PixelShift 07 - Wata cukrowa"
+#define OPTION_VAL_PIXELSHIFT_08_EASY_GREENS_PL "PixelShift 08 - Łatwe Zieloności"
 #define OPTION_VAL_PIXELSHIFT_09_GAMATE_PL NULL
 #define OPTION_VAL_PIXELSHIFT_10_GAME_BOY_LIGHT_PL NULL
 #define OPTION_VAL_PIXELSHIFT_11_GAME_BOY_POCKET_PL NULL
 #define OPTION_VAL_PIXELSHIFT_12_GAME_BOY_POCKET_ALT_PL NULL
 #define OPTION_VAL_PIXELSHIFT_13_GAME_POCKET_COMPUTER_PL NULL
 #define OPTION_VAL_PIXELSHIFT_14_GAME_WATCH_BALL_PL NULL
-#define OPTION_VAL_PIXELSHIFT_15_GB_BACKLIGHT_BLUE_PL NULL
-#define OPTION_VAL_PIXELSHIFT_16_GB_BACKLIGHT_FADED_PL NULL
-#define OPTION_VAL_PIXELSHIFT_17_GB_BACKLIGHT_ORANGE_PL NULL
-#define OPTION_VAL_PIXELSHIFT_18_GB_BACKLIGHT_WHITE__PL NULL
-#define OPTION_VAL_PIXELSHIFT_19_GB_BACKLIGHT_YELLOW_DARK_PL NULL
-#define OPTION_VAL_PIXELSHIFT_20_GB_BOOTLEG_PL NULL
+#define OPTION_VAL_PIXELSHIFT_15_GB_BACKLIGHT_BLUE_PL "PixelShift 15 - GB podświetlenie niebieskie"
+#define OPTION_VAL_PIXELSHIFT_16_GB_BACKLIGHT_FADED_PL "PixelShift 16 - GB podświetlenie wyblakłe"
+#define OPTION_VAL_PIXELSHIFT_17_GB_BACKLIGHT_ORANGE_PL "PixelShift 17 - GB podświetlenie pomarańczowe"
+#define OPTION_VAL_PIXELSHIFT_18_GB_BACKLIGHT_WHITE__PL "PixelShift 18 - GB podświetlenie białe "
+#define OPTION_VAL_PIXELSHIFT_19_GB_BACKLIGHT_YELLOW_DARK_PL "PixelShift 19 - GB podświetlenie ciemno-żółte"
+#define OPTION_VAL_PIXELSHIFT_20_GB_BOOTLEG_PL "PixelShift 20 - GB Podróbka"
 #define OPTION_VAL_PIXELSHIFT_21_GB_HUNTER_PL NULL
 #define OPTION_VAL_PIXELSHIFT_22_GB_KIOSK_PL NULL
 #define OPTION_VAL_PIXELSHIFT_23_GB_KIOSK_2_PL NULL
-#define OPTION_VAL_PIXELSHIFT_24_GB_NEW_PL NULL
+#define OPTION_VAL_PIXELSHIFT_24_GB_NEW_PL "PixelShift 24 - GB Nowy"
 #define OPTION_VAL_PIXELSHIFT_25_GB_NUKED_PL NULL
-#define OPTION_VAL_PIXELSHIFT_26_GB_OLD_PL NULL
+#define OPTION_VAL_PIXELSHIFT_26_GB_OLD_PL "PixelShift 26 - GB Stary"
 #define OPTION_VAL_PIXELSHIFT_27_GBP_BIVERT_PL NULL
 #define OPTION_VAL_PIXELSHIFT_28_GB_WASHED_YELLOW_BACKLIGHT_PL NULL
-#define OPTION_VAL_PIXELSHIFT_29_GHOST_PL NULL
-#define OPTION_VAL_PIXELSHIFT_30_GLOW_IN_THE_DARK_PL NULL
-#define OPTION_VAL_PIXELSHIFT_31_GOLD_BAR_PL NULL
-#define OPTION_VAL_PIXELSHIFT_32_GRAPEFRUIT_PL NULL
-#define OPTION_VAL_PIXELSHIFT_33_GRAY_GREEN_MIX_PL NULL
+#define OPTION_VAL_PIXELSHIFT_29_GHOST_PL "PixelShift 29 - Duch"
+#define OPTION_VAL_PIXELSHIFT_30_GLOW_IN_THE_DARK_PL "PixelShift 30 - Świecący w ciemności"
+#define OPTION_VAL_PIXELSHIFT_31_GOLD_BAR_PL "PixelShift 31 - Sztabka złota"
+#define OPTION_VAL_PIXELSHIFT_32_GRAPEFRUIT_PL "PixelShift 32 - Grejpfrut"
+#define OPTION_VAL_PIXELSHIFT_33_GRAY_GREEN_MIX_PL "PixelShift 33 - szaro-zielony miks"
 #define OPTION_VAL_PIXELSHIFT_34_MISSINGNO_PL NULL
-#define OPTION_VAL_PIXELSHIFT_35_MS_DOS_PL NULL
-#define OPTION_VAL_PIXELSHIFT_36_NEWSPAPER_PL NULL
+#define OPTION_VAL_PIXELSHIFT_35_MS_DOS_PL "PixelShift 35 - MS-DOS"
+#define OPTION_VAL_PIXELSHIFT_36_NEWSPAPER_PL "PixelShift 36 - gazeta"
 #define OPTION_VAL_PIXELSHIFT_37_PIP_BOY_PL NULL
 #define OPTION_VAL_PIXELSHIFT_38_POCKET_GIRL_PL NULL
-#define OPTION_VAL_PIXELSHIFT_39_SILHOUETTE_PL NULL
+#define OPTION_VAL_PIXELSHIFT_39_SILHOUETTE_PL "PixelShift 39 - Sylwetka"
 #define OPTION_VAL_PIXELSHIFT_40_SUNBURST_PL NULL
 #define OPTION_VAL_PIXELSHIFT_41_TECHNICOLOR_PL NULL
 #define OPTION_VAL_PIXELSHIFT_42_TRON_PL NULL
@@ -68754,7 +68754,7 @@ struct retro_core_options_v2 options_val = {
 #define CATEGORY_GB_LINK_LABEL_VN NULL
 #define CATEGORY_GB_LINK_INFO_0_VN "Thay đổi cài đặt mạng Game Link (chơi nhiều người)."
 #define GAMBATTE_GB_COLORIZATION_LABEL_VN "Chỉnh màu GB"
-#define GAMBATTE_GB_COLORIZATION_INFO_0_VN "Bật tô màu cho trò chơi Game BoyTự động: Chọn bảng màu “tốt nhất” (nhiều màu / phù hợp nhất).GBC: Chọn bảng màu Game Boy Color theo từng trò chơi nếu có định nghĩa, nếu không sẽ dùng GBC - Dark Green.SGB: Chọn bảng màu Super Game Boy theo trò chơi nếu có định nghĩa, nếu không sẽ dùng SGB - 1A.Nội bộ: Dùng tùy chọn Internal Palette của core.Tùy chỉnh: Tải bảng màu do người dùng tạo từ thư mục hệ thống."
+#define GAMBATTE_GB_COLORIZATION_INFO_0_VN "Bật màu cho các game Game Boy. 'Tự động' chọn bảng màu 'phù hợp nhất' (nhiều màu hoặc phù hợp nhất). 'GBC' chọn bảng màu Game Boy Color riêng của từng game nếu có, nếu không sẽ dùng 'GBC - Xanh lá đậm'. 'SGB' chọn bảng màu Super Game Boy riêng của từng game nếu có, nếu không sẽ dùng 'SGB - 1A'. 'Nội bộ' sử dụng tùy chọn lõi 'Bảng màu nội bộ'. 'Tùy chỉnh' tải bảng màu do người dùng tạo từ thư mục hệ thống."
 #define OPTION_VAL_AUTO_VN "Tự động"
 #define OPTION_VAL_GBC_VN NULL
 #define OPTION_VAL_SGB_VN NULL
@@ -69190,7 +69190,7 @@ struct retro_core_options_v2 options_val = {
 #define OPTION_VAL_MIX_VN "Đơn giản"
 #define OPTION_VAL_LCD_GHOSTING_VN "LCD Ghosting (Chính xác)"
 #define OPTION_VAL_LCD_GHOSTING_FAST_VN "LCD Ghosting (Nhanh)"
-#define GAMBATTE_AUDIO_RESAMPLER_LABEL_VN "Âm thanh Resampler Driver"
+#define GAMBATTE_AUDIO_RESAMPLER_LABEL_VN "Bộ lấy mẫu lại âm thanh"
 #define GAMBATTE_AUDIO_RESAMPLER_INFO_0_VN "Chọn thuật toán dùng khi tái lấy mẫu âm thanh (tốc độ âm thanh Game Boy bị giới hạn bởi tốc độ ghi CPU, nên tần số ‘native’ không thực tế trên thiết bị âm thanh hiện đại và cần giảm mẫu). 'Sinc' cho chất lượng cao nhất. 'Cosine' cải thiện hiệu năng trên phần cứng yếu."
 #define OPTION_VAL_SINC_VN NULL
 #define OPTION_VAL_CC_VN NULL
@@ -69202,8 +69202,8 @@ struct retro_core_options_v2 options_val = {
 #define GAMBATTE_GB_BOOTLOADER_INFO_0_VN "Bật hỗ trợ bootloader chính thức của Game Boy và Game Boy Color, kèm hiệu ứng logo khởi động tương ứng."
 #define GAMBATTE_UP_DOWN_ALLOWED_LABEL_VN "Cho phép Hướng Ngược Lại"
 #define GAMBATTE_UP_DOWN_ALLOWED_INFO_0_VN "Bật tùy chọn này sẽ cho phép nhấn/nhấn luân phiên nhanh/giữ đồng thời cả trái và phải (hoặc lên và xuống). Điều này có thể gây lỗi liên quan đến di chuyển."
-#define GAMBATTE_TURBO_PERIOD_LABEL_VN "Chu kỳ nút tự động nhấn"
-#define GAMBATTE_TURBO_PERIOD_INFO_0_VN "Chỉ định khoảng lặp lại (tính theo khung hình) khi giữ nút tự động nhấn A/B."
+#define GAMBATTE_TURBO_PERIOD_LABEL_VN "Chu kỳ Phím tự động nhấn"
+#define GAMBATTE_TURBO_PERIOD_INFO_0_VN "Chỉ định khoảng lặp lại (tính theo khung hình) khi giữ Phím tự động nhấn A/B."
 #define GAMBATTE_RUMBLE_LEVEL_LABEL_VN "Độ mạnh rung của tay cầm"
 #define GAMBATTE_RUMBLE_LEVEL_INFO_0_VN "Bật hiệu ứng phản hồi rung cho các trò chơi được hỗ trợ (Pokemon Pinball, Perfect Dark...)."
 #define GAMBATTE_SHOW_GB_LINK_SETTINGS_LABEL_VN "Hiện cài đặt Game Link"
