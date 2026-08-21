@@ -115,7 +115,7 @@ class LinkSerial : public gambatte::SerialIO
 
 		const struct retro_link_interface *link_;
 		unsigned port_;
-		retro_link_handle_t handle_;
+		retro_link_port_t *handle_;
 		bool attached_;
 
 		int selfId_;
