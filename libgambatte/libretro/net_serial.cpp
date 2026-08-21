@@ -3,17 +3,26 @@
 #include "gambatte_log.h"
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
 #include <errno.h>
 #include <sys/types.h>
 #ifdef _WIN32
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #else
+#include <unistd.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#endif
+
+/* A Windows SOCKET is not a CRT file descriptor: close() looks the handle up in
+ * the CRT table, does not find it, and leaves the socket open. MinGW compiles it
+ * anyway, and MSVC has no unistd.h to compile it from at all. */
+#ifdef _WIN32
+#define close_socket(fd) closesocket(fd)
+#else
+#define close_socket(fd) close(fd)
 #endif
 
 NetSerial::NetSerial()
@@ -51,11 +60,11 @@ void NetSerial::stop()
 		gambatte_log(RETRO_LOG_INFO, "Stopping GameLink network\n");
 		is_stopped_ = true;
 		if (sockfd_ >= 0) {
-			close(sockfd_);
+			close_socket(sockfd_);
 			sockfd_ = -1;
 		}
 		if (server_fd_ >= 0) {
-			close(server_fd_);
+			close_socket(server_fd_);
 			server_fd_ = -1;
 		}
 	}
@@ -106,13 +115,13 @@ bool NetSerial::startServerSocket()
 
 		if (bind(fd, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
 			gambatte_log(RETRO_LOG_ERROR, "Error on binding: %s\n", strerror(errno));
-			close(fd);
+			close_socket(fd);
 			return false;
 		}
 
 		if (listen(fd, 1) < 0) {
 			gambatte_log(RETRO_LOG_ERROR, "Error listening: %s\n", strerror(errno));
-			close(fd);
+			close_socket(fd);
 			return false;
 		}
 		server_fd_ = fd;
@@ -170,14 +179,14 @@ bool NetSerial::startClientSocket()
 		struct hostent* server_hostname = gethostbyname(hostname_.c_str());
 		if (server_hostname == NULL) {
 			gambatte_log(RETRO_LOG_ERROR, "Error, no such host: %s\n", hostname_.c_str());
-			close(fd);
+			close_socket(fd);
 			return false;
 		}
 
 		memmove((char*)&server_addr.sin_addr.s_addr, (char*)server_hostname->h_addr, server_hostname->h_length);
 		if (connect(fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
 			gambatte_log(RETRO_LOG_ERROR, "Error connecting to server: %s\n", strerror(errno));
-			close(fd);
+			close_socket(fd);
 			return false;
 		}
 		sockfd_ = fd;
@@ -208,7 +217,7 @@ unsigned char NetSerial::send(unsigned char data, bool fastCgb)
 #endif
    {
 		gambatte_log(RETRO_LOG_ERROR, "Error writing to socket: %s\n", strerror(errno));
-		close(sockfd_);
+		close_socket(sockfd_);
 		sockfd_ = -1;
 		return 0xFF;
 	}
@@ -220,7 +229,7 @@ unsigned char NetSerial::send(unsigned char data, bool fastCgb)
 #endif
    {
 		gambatte_log(RETRO_LOG_ERROR, "Error reading from socket: %s\n", strerror(errno));
-		close(sockfd_);
+		close_socket(sockfd_);
 		sockfd_ = -1;
 		return 0xFF;
 	}
@@ -266,7 +275,7 @@ bool NetSerial::check(unsigned char out, unsigned char& in, bool& fastCgb)
 #endif
    {
 		gambatte_log(RETRO_LOG_ERROR, "Error reading from socket: %s\n", strerror(errno));
-		close(sockfd_);
+		close_socket(sockfd_);
 		sockfd_ = -1;
 		return false;
 	}
@@ -285,7 +294,7 @@ bool NetSerial::check(unsigned char out, unsigned char& in, bool& fastCgb)
    #endif
    {
 		gambatte_log(RETRO_LOG_ERROR, "Error writing to socket: %s\n", strerror(errno));
-		close(sockfd_);
+		close_socket(sockfd_);
 		sockfd_ = -1;
 		return false;
 	}

@@ -853,16 +853,17 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "gambatte_gb_link_mode",
       "Game Link Mode",
       "Link Mode",
-      "When enabling networked Game Link functionality, specify whether current instance should run as a server or client.",
+      "How this Game Boy reaches another one. Link Cable emulates a lead between this machine and a second Game Boy running in the same frontend, which decides what is cabled to what and must support the link interface; where it does not, this behaves as Not Connected. The two Network modes instead join two frontends over a socket, one running as server and the other as client.",
       NULL,
       "gb_link",
       {
+         { "Link Cable",     NULL },
          { "Not Connected",  NULL },
          { "Network Server", NULL },
          { "Network Client", NULL },
          { NULL, NULL },
       },
-      "Not Connected"
+      "Link Cable"
    },
    {
       "gambatte_gb_link_network_port",
