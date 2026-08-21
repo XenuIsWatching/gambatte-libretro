@@ -49591,48 +49591,48 @@ struct retro_core_options_v2 options_or = {
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_1_INFO_1_PL "Pierwsza cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_2_LABEL_PL "Adres serwera Cz. 02: x_.___.___.___"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_2_LABEL_CAT_PL "Adres serwera 02: _x_.___.___.___.___"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_2_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_2_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_2_INFO_0_PL "Druga cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_2_INFO_1_PL "Druga cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_3_LABEL_PL "Adres serwera łącza sieciowego, Pt. 03: __x.___.___.___ _"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_3_LABEL_CAT_PL "Adres serwera 03: __x.___.___.___.___"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_3_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_3_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_3_INFO_0_PL "Trzecia cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_3_INFO_1_PL "Trzecia cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_4_LABEL_PL "Adres serwera łącza sieciowego, Pt. 04: ___.x__.___.___"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_4_LABEL_CAT_PL "Adres serwera łącza sieciowego, Pt. 04: ___.x__.___.___"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_4_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_4_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_4_INFO_0_PL "Czwarta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_4_INFO_1_PL "Czwarta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_5_LABEL_PL "Adres serwera łącza sieciowego, Pt. 05: ___._x_.___.___"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_5_LABEL_CAT_PL "Adres serwera 05: ___._x_.___.___ _"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_5_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_5_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_5_INFO_0_PL "Piąta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_5_INFO_1_PL "Piąta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_6_LABEL_PL "Adres serwera łącza sieciowego, Pt. 06: ___.__x.___.___"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_6_LABEL_CAT_PL "Adres serwera 06: ___.__x.___.___"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_6_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_6_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_6_INFO_0_PL "Szósta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_6_INFO_1_PL "Szósta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_7_LABEL_PL "Adres serwera łącza sieciowego, Pt. 07: ___.___.x__.___"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_7_LABEL_CAT_PL "Adres serwera 07: ___.___.x__.___"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_7_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_7_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_7_INFO_0_PL "Siódma cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_7_INFO_1_PL "Siódma cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_8_LABEL_PL "Adres serwera łącza sieciowego, Pt. 08: ___.___._x_.___"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_8_LABEL_CAT_PL "Adres serwera 08: ___.___._x_.___"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_8_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_8_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_8_INFO_0_PL "Ósma cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_8_INFO_1_PL "Ósma cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_9_LABEL_PL "Adres serwera łącza sieciowego, Pt. 09: ___.___.__x.___"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_9_LABEL_CAT_PL "Adres serwera 09: ___.___.__x.___"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_9_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_9_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_9_INFO_0_PL "Dziewiąta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_9_INFO_1_PL "Dziewiąta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_10_LABEL_PL "Adres serwera łącza sieciowego, Pt. 10: ___.___.___.x__"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_10_LABEL_CAT_PL "Adres serwera Pt. 10: ___.___.___.x__"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_10_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_10_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_10_INFO_0_PL "Dziesiąta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_10_INFO_1_PL "Dziesiąta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_11_LABEL_PL "Adres serwera łącza sieciowego, Pt. 11: ___.___.___._x_"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_11_LABEL_CAT_PL "Adres serwera Pt. 11: ___.___.___._x_"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_11_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_11_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_11_INFO_0_PL "Jedenasta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_11_INFO_1_PL "Jedenasta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_12_LABEL_PL "Adres serwera łącza sieciowego, Pt. 12: ___.___.___.___.__x"
 #define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_12_LABEL_CAT_PL "Adres serwera Pt. 12: ___.___.___.___.__x"
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_12_INFO_0_PL NULL
-#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_12_INFO_1_PL NULL
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_12_INFO_0_PL "Dwunasta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Network Client\"."
+#define GAMBATTE_GB_LINK_NETWORK_SERVER_IP_12_INFO_1_PL "Dwunasta cyfra zdalnego adresu IP serwera sieciowego 'Game Link'. Używana tylko wtedy, gdy \"Tryb Game Link\" jest ustawione na \"Klient sieciowy\"."
 
 struct retro_core_option_v2_category option_cats_pl[] = {
    {
