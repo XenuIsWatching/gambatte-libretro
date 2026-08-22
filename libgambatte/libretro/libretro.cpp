@@ -95,6 +95,14 @@ static bool rom_loaded = false;
 static uint64_t libretro_samples_count = 0;
 static uint64_t libretro_frames_count  = 0;
 
+/* The dupe detector below paces video against the running total of audio
+ * samples, which is session state: retro_unserialize resets it, so a machine
+ * restored mid-session emits its duplicate frame at a different frame than the
+ * run the state came from. The emulated machine is untouched either way, but
+ * the frame INDEX slips by one, which breaks lockstep netplay the moment a
+ * state is transferred. Frontends that pace themselves can turn it off. */
+static bool frame_dupe_enabled = true;
+
 static INLINE void frame_pacing_reset(void)
 {
    libretro_samples_count = 0;
@@ -2366,6 +2374,13 @@ static void find_internal_palette(const unsigned short **palette, bool *is_gbc)
 
 static void check_variables(bool startup)
 {
+   {
+      struct retro_variable var = {0};
+      var.key = "gambatte_frame_dupe";
+      frame_dupe_enabled = !(environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var)
+                             && var.value && !strcmp(var.value, "disabled"));
+   }
+
    unsigned i, j;
    unsigned colorCorrectionMode    = 0;
    unsigned colorCorrection        = 0;
@@ -3006,7 +3021,7 @@ void retro_run()
    update_input_state();
 
    uint64_t expected_frames = libretro_samples_count / SOUND_SAMPLES_PER_FRAME;
-   if (libretro_frames_count < expected_frames) // Detect frame dupes.
+   if (frame_dupe_enabled && libretro_frames_count < expected_frames) // Detect frame dupes.
    {
       video_cb(NULL, VIDEO_WIDTH, VIDEO_HEIGHT, VIDEO_PITCH * sizeof(gambatte::video_pixel_t));
       libretro_frames_count++;

@@ -655,6 +655,20 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "Auto"
    },
    {
+      "gambatte_frame_dupe",
+      "Frame Duplication",
+      NULL,
+      "Duplicate a video frame occasionally so a 60Hz frontend gets 60 frames per second from a machine that runs at 59.7. Disable for lockstep netplay or any frontend that paces itself: the duplicate is emitted from a running total of audio samples that a state load resets, so a transferred state slips one frame against the run it came from.",
+      NULL,
+      NULL,
+      {
+         { "enabled",  NULL },
+         { "disabled", NULL },
+         { NULL, NULL },
+      },
+      "enabled"
+   },
+   {
       "gambatte_gb_bootloader",
       "Use Official Bootloader (Restart Required)",
       NULL,
