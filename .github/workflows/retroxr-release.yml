@@ -1,0 +1,177 @@
+# Build the retroXR gambatte core for Windows and Android and publish it as a
+# release, so retroXR's CoreDownloadManager can fetch it.
+#
+# This fork carries the Game Boy link cable: a link interface block, a SerialIO
+# that knows where the machine's clock stands, and libretro/link_serial.cpp
+# speaking `gb-sio-1` over a bus the frontend hosts. gambatte_gb_link_mode gains
+# a fourth value, "Link Cable", and it is the default -- with no bus, or a bus
+# with nothing cabled to it, the driver hands back the 0xFF of an open line,
+# which is exactly what the port did before.
+#
+# It also carries two accuracy fixes that are not about cables at all: the
+# progressive serial shift took its bits off the top of the incoming byte rather
+# than from where the transfer had reached, and the blit event and blank-LCD
+# flag were missing from a savestate, which slipped a frame on reload with the
+# LCD off.
+#
+#   Windows  gambatte_libretro.dll.zip          containing gambatte_libretro.dll
+#   Android  gambatte_libretro_android.so.zip   containing gambatte_libretro_android.so
+#
+# Windows is cross-compiled from Ubuntu with mingw-w64 rather than built with
+# MSVC, because that is what Makefile.libretro's Windows branch is written for:
+# it wants gcc, -static-libgcc/-static-libstdc++, and a GNU ld version script,
+# none of which MSVC provides. It also links ws2_32, which the link code needs.
+#
+# The release must NOT be a prerelease: the download URL is the /releases/latest/
+# form so shipping a build needs no app update, and GitHub's `latest` skips
+# prereleases. Anything else cut on this fork should be marked prerelease.
+name: retroXR core release
+
+on:
+  push:
+    tags:
+      - 'retroxr-gambatte-libretro-v*'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Branch, tag or SHA to build'
+        required: true
+        default: 'retroxr'
+      tag:
+        description: 'Release tag to publish as (leave blank to build without publishing)'
+        required: false
+        default: ''
+
+jobs:
+  windows:
+    name: Windows x86_64 (mingw-w64)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++-mingw-w64-x86-64 make zip
+
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          ref: ${{ github.event.inputs.ref || github.ref }}
+
+      # platform=win is passed explicitly and never inferred. The makefile picks
+      # its platform from uname, so building for Windows from a Linux host would
+      # otherwise silently produce a unix target.
+      - name: Build
+        run: |
+          make -f Makefile.libretro platform=win \
+            CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ \
+            -j$(nproc)
+
+      - name: Package
+        run: |
+          mapfile -t hits < <(find . -maxdepth 2 -name 'gambatte_libretro.dll' -type f)
+          if [ "${#hits[@]}" -ne 1 ]; then
+            echo "expected exactly one gambatte_libretro.dll, found ${#hits[@]}:"
+            printf '  %s\n' "${hits[@]}"
+            exit 1
+          fi
+          mkdir -p stage
+          cp "${hits[0]}" stage/gambatte_libretro.dll
+          (cd stage && zip -q -X ../gambatte_libretro.dll.zip gambatte_libretro.dll)
+          file stage/gambatte_libretro.dll
+          ls -lh gambatte_libretro.dll.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: gambatte_libretro.dll.zip
+          if-no-files-found: error
+
+  android:
+    name: Android arm64-v8a
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip zip
+          wget -q https://dl.google.com/android/repository/android-ndk-r27d-linux.zip
+          unzip -q android-ndk-r27d-linux.zip
+          echo "$PWD/android-ndk-r27d" >> $GITHUB_PATH
+
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          ref: ${{ github.event.inputs.ref || github.ref }}
+
+      # Application.mk says APP_ABI := all; arm64-v8a is passed on the command
+      # line so the run builds the one ABI retroXR ships and not every ABI the
+      # NDK knows.
+      - name: Build
+        run: |
+          cd libgambatte/libretro/jni
+          ndk-build APP_ABI=arm64-v8a -j$(nproc)
+
+      # LOCAL_MODULE is `retro`, so ndk-build emits libretro.so -- a name that
+      # says nothing about which core it is. It is renamed on the way into the
+      # zip to the name the asset advertises and the installer expects.
+      - name: Package
+        run: |
+          mapfile -t hits < <(find libgambatte/libretro -path '*arm64-v8a*' -name 'libretro.so' -type f)
+          if [ "${#hits[@]}" -ne 1 ]; then
+            echo "expected exactly one arm64-v8a libretro.so, found ${#hits[@]}:"
+            printf '  %s\n' "${hits[@]}"
+            exit 1
+          fi
+          mkdir -p stage
+          cp "${hits[0]}" stage/gambatte_libretro_android.so
+          (cd stage && zip -q -X ../gambatte_libretro_android.so.zip gambatte_libretro_android.so)
+          file stage/gambatte_libretro_android.so
+          ls -lh gambatte_libretro_android.so.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android
+          path: gambatte_libretro_android.so.zip
+          if-no-files-found: error
+
+  publish:
+    name: Publish release
+    needs: [windows, android]
+    if: github.event_name == 'push' || github.event.inputs.tag != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          ls -lh dist
+          cat > notes.md <<EOF
+          gambatte libretro core built for retroXR, from \`$GITHUB_SHA\`.
+
+          Windows x86_64 and Android arm64-v8a. The source for these binaries is
+          this tag.
+
+          Over the stock buildbot build this carries the Game Boy link cable,
+          spoken over a bus the frontend hosts, plus two accuracy fixes it
+          uncovered: the progressive serial shift took its bits from the wrong
+          end of the incoming byte, and a savestate was missing the blit event
+          and blank-LCD flag, which slipped a frame on reload with the LCD off.
+          EOF
+          if ! gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$TAG" \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "gambatte (retroXR build) $TAG" \
+              --notes-file notes.md
+          fi
+          gh release upload "$TAG" \
+            dist/gambatte_libretro.dll.zip \
+            dist/gambatte_libretro_android.so.zip \
+            --repo "$GITHUB_REPOSITORY" --clobber
