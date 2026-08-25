@@ -452,6 +452,8 @@ unsigned LinkSerial::advance(unsigned wanted)
 
 	if (grant_ == RETRO_LINK_UNBOUNDED)
 		return wanted;
+	if (wakeFlags != RETRO_LINK_WAKE_NONE && grant_ <= now_)
+		return 1;
 
 	headroom = (grant_ > now_) ? (grant_ - now_) : 0;
 	budget = (unsigned)(headroom / 4);
