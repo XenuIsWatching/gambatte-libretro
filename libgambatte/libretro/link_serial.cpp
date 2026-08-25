@@ -225,7 +225,7 @@ void LinkSerial::wire(uint64_t tick, unsigned char type, unsigned char sb, unsig
 	 * already stands is granted at once, so this costs a lock and never a wait. */
 	if (!anchored_)
 	{
-		grant_ = link_->advance(handle_, now_, now_ + horizon_, now_);
+		grant_ = link_->advance(handle_, now_, now_ + horizon_, now_, 0);
 		anchored_ = true;
 	}
 
@@ -436,7 +436,8 @@ unsigned LinkSerial::advance(unsigned wanted)
 	/* Publish before reading. A peer parked on this machine's horizon cannot
 	 * move until it has been told the horizon moved, and it may be sitting on
 	 * the very message this machine is about to want. */
-	grant_ = link_->advance(handle_, now_, now_ + horizon_, now_ + grain_);
+	uint32_t wakeFlags = RETRO_LINK_WAKE_NONE;
+	grant_ = link_->advance(handle_, now_, now_ + horizon_, now_ + grain_, &wakeFlags);
 	anchored_ = true;
 	pump();
 	applyDue();
